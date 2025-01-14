@@ -1,0 +1,42 @@
+.users {
+    margin: 3rem auto;
+    text-align: center;
+}
+
+.title {
+    font-size: 4.5rem;
+    color: var(--red);
+}
+
+.usersGrid {
+    width: 80%;
+    margin: 6rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border: 1px solid var(--red);
+    flex-direction: column;
+}
+
+.user {
+    display: grid;
+    grid-template-columns: repeat(3, calc(100%/3));
+    width: 100%;
+    height: 50px;
+    align-items: center;
+    border-bottom: 1px solid var(--red);
+    justify-content: center;
+}
+
+.user:nth-last-child(1){
+    border: none;
+}
+
+.user h3 {
+    border-right: 1px solid var(--red);
+}
+
+.user h3:nth-last-child(1) {
+    border: none;
+}

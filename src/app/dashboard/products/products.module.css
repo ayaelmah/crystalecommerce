@@ -1,0 +1,200 @@
+.products {
+    margin: 3rem auto;
+    text-align: center;
+}
+
+.title {
+    font-size: 4.5rem;
+    text-align: center;
+    color: var(--red);
+}
+
+
+.form {
+    width: 80%;
+    margin: 6rem  auto 3rem auto;
+    display: grid;
+    grid-template-columns: repeat(7, calc(100%/7));
+}
+
+.form > * {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.form .file {
+    display: none;
+}
+
+.form input {
+    outline: none;
+    border: none;
+    border-left: 1px solid var(--red);
+    padding: 7px;
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
+.form button {
+    border: none;
+    background-color: var(--red);
+    color: var(--yellow);
+    font-weight: 800;
+    font-size: 1.3rem;
+}
+
+.form label {
+    background-color: white;
+    color: var(--red);
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.productsGrid {
+    width: 80%;
+    border: 1px solid var(--red);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 5rem auto;
+    background-color: white;
+}
+
+.productsGrid article {
+    display: grid;
+    grid-template-columns: repeat(7, calc(100%/7));
+    width: 100%;
+    border-bottom: 1px solid var(--red);
+}
+
+.productsGrid article:nth-last-child(1){
+    border: none;
+}
+
+.productsGrid article > * {
+    border-right: 1px solid var(--red);
+    min-height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.productsGrid article > *:nth-last-child(1){
+    border: none;
+}
+
+.productsGrid article button {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 1.3rem;
+    color: var(--red);
+    font-weight: 800;
+}
+
+.productsGrid input {
+    width: 100%;
+    padding: 1rem 0.5rem;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    font-size: 1.3rem;
+    font-weight: 800;
+}
+
+@media screen and (max-width: 950px){
+        .productsGrid {
+            width: 90%;
+        }
+    
+        .form {
+            width: 90%;
+        }
+
+        .productsGrid h2 {
+            font-size: 1.1rem;
+        }
+
+        .productsGrid article button {
+            font-size: 1.1rem;
+        }
+        
+}
+
+
+@media screen and (max-width: 750px){
+    .productsGrid {
+        width: 95%;
+    }
+
+    .form {
+        width: 95%;
+    }
+
+    .productsGrid h2 {
+        font-size: 0.9rem;
+    }
+
+    .productsGrid article button {
+        font-size: 0.9rem;
+    }
+
+    
+.productsGrid input {
+    width: 100%;
+    padding: 1rem 0.5rem;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    font-size: 1.3rem;
+    font-weight: 800;
+}
+
+.form button {
+    font-size: 1rem;
+}
+
+.products .form input {
+    font-size: 1.1rem;
+}
+
+.products .form input::placeholder {
+    font-size: 1.1rem;
+}
+    
+}
+
+@media screen and (max-width: 600px){
+    .productsGrid {
+        width: 97%;
+    }
+
+    .form {
+        width: 97%;
+    }
+
+    .productsGrid h2 {
+        font-size: 0.7rem;
+    }
+
+    .productsGrid article button {
+        font-size: 0.7rem;
+    }
+
+    .productsGrid img {
+        height: 20px;
+        width: 20px;
+    }
+ 
+    .products .form input {
+        font-size: 0.9rem;
+    }
+    
+    .products .form input::placeholder {
+        font-size: 0.9rem;
+    }
+        
+}

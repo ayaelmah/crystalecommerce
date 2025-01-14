@@ -1,0 +1,74 @@
+.myorders {
+    padding: 3rem 1rem;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.title {
+    font-size: 3.4rem;
+    text-align: center;
+    color: var(--red);
+}
+
+.orders {
+    margin: 4rem auto;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: 1px solid var(--yellow);
+}
+
+.orders div {
+    display: grid;
+    grid-template-columns: repeat(4, calc(100%/4));
+    text-align: center;
+}
+
+.orders div h2 {
+    padding: 0.7rem 0;
+    border-right: 1px solid var(--yellow);
+}
+
+.orders div h2 a {
+    text-decoration: none;
+}
+
+@media screen and (max-width: 900px) {
+
+    .title {
+        font-size: 2.8rem;
+    }
+
+    .myorders {
+        width: 90%;
+    }
+    
+    .orders div h2 {
+        padding: 0.7rem 0;
+        font-size: 1rem;
+    }
+    
+    .orders div h2 a {
+        text-decoration: none;
+    }
+    
+}
+
+@media screen and (max-width: 600px) {
+
+    .title {
+        font-size: 2.4rem;
+    }
+
+    .myorders {
+        width: 100%;
+    }
+    
+    .orders div h2 {
+        padding: 0.5rem 0;
+        font-size: 0.9rem;
+    }
+    
+
+}

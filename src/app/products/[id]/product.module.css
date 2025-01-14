@@ -1,0 +1,120 @@
+.product {
+    display: flex;
+    margin: 2rem auto;
+    width: 80%;
+    gap: 2rem;
+}
+
+.mainImg {
+    height: 100%;
+    width: 50%;
+    border-radius: 25px;
+}
+
+.content h1 {
+    font-size: 3.4rem;
+    color: var(--red);
+}
+
+.content h2 {
+    color: rgb(255, 136, 0);
+    font-size: 2.7rem;
+    margin: 1rem 0;
+}
+
+.content h3 {
+    color: rgb(190, 159, 6);
+}
+
+.content img {
+    margin: 2rem 0;
+}
+
+.btn {
+    padding: 1rem 5rem;
+    font-size: 2.2rem;
+    background-color: var(--red);
+    color: var(--yellow);
+    border: none;
+    cursor: pointer;
+    display: block;
+    transition: 0.5s ease-in;
+}
+
+.btn.inCart {
+    background-color: rgb(228, 228, 228);
+    color: gray;
+    border: none;
+}
+
+.reviews form {
+    background-color: white;
+    width: 50%;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem 2rem 3rem 2rem;
+    border-radius: 25px;
+}
+
+.reviews form select {
+    padding: 0.5rem 1.5rem;
+    font-size: 1.3rem;
+    outline: none;
+    cursor: pointer;
+    font-weight: 800;
+}
+
+.reviews form textarea {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    font-size: 1.5rem;
+    outline: none;
+    border: 1px solid var(--red);
+}
+
+.reviews form button {
+    padding: 0.7rem 3rem;
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--yellow);
+    background-color: var(--red);
+    border: none;
+    cursor: pointer;
+}
+
+.reviews form button.commented {
+    background-color: gray;
+    color: black;
+}
+
+.comments {
+    padding: 5rem 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.comments .review {
+    background-color: white;
+    width: 40%;
+    padding: 1rem 3rem;
+    border-radius: 25px;
+}
+
+.comments .review h1 {
+    font-size: 2.1rem;
+}
+
+.comments .review h3 {
+    margin: 2rem 0;
+    font-size: 1.2rem;
+}
+
+.comments .review p {
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
