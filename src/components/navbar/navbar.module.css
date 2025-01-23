@@ -1,0 +1,162 @@
+.nav {
+    background-color: var(--blue);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 3rem;
+    color: white;
+}
+
+.logo {
+    font-size: 2rem;
+}
+
+.links {
+    display: flex;
+    gap: 1rem;
+
+}
+
+.links li a {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.icons img {
+    cursor: pointer;
+}
+
+/**** responsive nav ****/
+
+.responsive {
+    position: fixed;
+    background-color: #892be293;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-150%);
+    opacity: 0;
+    transition: 1.5s ease-in-out;
+}
+
+.responsive.open {
+    transform: translateY(0%);
+    opacity: 1;
+}
+
+.responsive img {
+    position: relative;
+    top: -40%;
+    right: -50%;
+    cursor: pointer;
+}
+
+.responsive ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+}
+
+
+.responsive a {
+    color: white;
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.menu {
+    display: none;
+}
+
+
+@media screen and (max-width: 1000px) {
+    
+.logo {
+    font-size: 1.8rem;
+}
+
+.links li a {
+    font-size: 1rem;
+}
+
+.icons img {
+    width: 30px;
+    height: 30px;
+}
+
+}
+
+
+@media screen and (max-width: 850px) {
+    
+    .logo {
+        font-size: 1.4rem;
+    }
+    
+    .links li a {
+        font-size: 0.9rem;
+    }
+    
+    .icons img {
+        width: 30px;
+        height: 30px;
+    }
+    
+    
+    }
+
+@media screen and (max-width: 750px){
+    .links {
+        display: none;
+    }
+
+    .menu {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 480px){
+
+    .nav {
+        justify-content: space-between;
+        padding: 1rem;
+    }
+
+    .responsive img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .responsive a {
+        color: white;
+        font-size: 1.3rem;
+        font-weight: 800;
+    }
+
+    .logo {
+        font-size: 1.1rem;
+    }
+
+    .icons {
+        gap: 0.5rem;
+    }
+
+    .icons img {
+        width: 25px;
+        height: 25px;
+    }
+}
