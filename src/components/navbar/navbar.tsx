@@ -3,15 +3,18 @@ import React, { useState } from 'react'
 import styles from "./navbar.module.css";
 import Link from 'next/link';
 import Image from 'next/image';
+import Cart from '../cart/cart';
 
 const navbar = () => {
     const [openNav, setOpenNav] = useState(false);
+    const [openCart, setOpenCart] = useState(true);
 
 
   return (
     <>
+    <Cart openCart={openCart} setOpenCart={setOpenCart} />
     <nav className={styles.nav}>
-        <h1 className={styles.logo}>Sahara Sparkle        </h1>
+        <h1 className={styles.logo}>Sahara Sparkle</h1>
         <ul className={styles.links}>
         <li>
             <Link href={"/"}>Category1</Link>
@@ -29,7 +32,7 @@ const navbar = () => {
         <div className={styles.icons}>
             <Image height={35} width={35} src={"/images/icons/user.png"} alt="user"></Image>
             <Image height={35} width={35} src={"/images/icons/dashboard.png"} alt="dashboard"></Image>
-            <Image height={35} width={35} src={"/images/icons/cart.png"} alt="user"></Image>
+            <Image onClick={()=> setOpenCart(true)} height={35} width={35} src={"/images/icons/cart.png"} alt="user"></Image>
             <Image onClick={()=> setOpenNav(true)} className={styles.menu} height={35} width={35} src={"/images/icons/menu.png"} alt="menu"></Image>
         </div>
     </nav>
