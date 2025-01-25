@@ -27,7 +27,9 @@ const navbar = () => {
         </li>            
         </ul>
         <div className={styles.icons}>
-            <Image height={35} width={35} src={"/images/icons/user.png"} alt="user"></Image>
+            <Link href={"/profile"}>
+                <Image height={35} width={35} src={"/images/icons/user.png"} alt="user"></Image>
+            </Link>
             <Image height={35} width={35} src={"/images/icons/dashboard.png"} alt="dashboard"></Image>
             <Image onClick={()=> setOpenCart(true)} height={35} width={35} src={"/images/icons/cart.png"} alt="user"></Image>
             <Image onClick={()=> setOpenNav(true)} className={styles.menu} height={35} width={35} src={"/images/icons/menu.png"} alt="menu"></Image>

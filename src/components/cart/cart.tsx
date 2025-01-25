@@ -3,6 +3,7 @@ import React, {useState} from 'react'
 import styles from "./cart.module.css"
 import Image from 'next/image'
 import CartItem from './cartItem'
+import Link from 'next/link'
 
 const cart = ({openCart, setOpenCart}: {openCart: any, setOpenCart: any}) => {
 
@@ -24,7 +25,9 @@ const cart = ({openCart, setOpenCart}: {openCart: any, setOpenCart: any}) => {
         <CartItem />
         </article>
         <span className={styles.priceNum}>$30</span>
+        <Link href="/checkout">
         <button className={styles.cartBtn}>Buy Now</button>
+        </Link>
     </div>
   )
 }

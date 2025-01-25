@@ -52,6 +52,9 @@
     color: rgb(255, 153, 0);
 }
 
+.cart a {
+    width: 100%;
+}
 
 .cartBtn {
     width: 100%;

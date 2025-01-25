@@ -66,7 +66,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-content: space-between;
-    gap: 3rem;
+    gap: 2rem;
 }
 
 .change {
@@ -78,4 +78,22 @@
 
 .change img {
     cursor: pointer;
+}
+
+@media screen and (max-width: 1080px){
+ .productFlex {
+    flex-direction: column;
+ }   
+}
+
+@media screen and (max-width: 950px) {
+    .productsGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .productsGrid {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
