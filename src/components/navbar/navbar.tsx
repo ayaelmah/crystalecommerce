@@ -17,17 +17,14 @@ const navbar = () => {
         <h1 className={styles.logo}>Sahara Sparkle</h1>
         <ul className={styles.links}>
         <li>
-            <Link href={"/"}>Category1</Link>
+            <Link href={"/"}>Products</Link>
         </li>
         <li>
-            <Link href={"/"}>Category1</Link>
+            <Link href={"/"}>Bookmarks</Link>
         </li>            
         <li>
-            <Link href={"/"}>Category1</Link>
+            <Link href={"/contactus"}>Contact Us</Link>
         </li>            
-        <li>
-            <Link href={"/"}>Category1</Link>
-        </li>
         </ul>
         <div className={styles.icons}>
             <Image height={35} width={35} src={"/images/icons/user.png"} alt="user"></Image>
