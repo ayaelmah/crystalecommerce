@@ -2,11 +2,13 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Product from "@/components/product/product";
+import { getFeaturedProductsServer } from "@/server/product";
 
 export default function Home() {
 
+  const [featured, setFeatured] = useState([]);
   const [images, setImages] = useState(["/images/main/bg1.jpg", "/images/main/bg2.jpg", "/images/main/bg3.jpg", "/images/main/bg4.jpg", "/images/main/bg5.jpg"]);
   const [index, setIndex] = useState(0);
   const [reviewIndex, setReviewIndex] = useState(0);
@@ -20,6 +22,15 @@ export default function Home() {
     if (reviewIndex == 0) setReviewIndex(4);
     else setReviewIndex(reviewIndex - 1);
   }
+
+  const getFeatures = async() =>{
+    const res: any = await getFeaturedProductsServer();
+    setFeatured(res);
+  }
+
+  useEffect(()=>{
+    getFeatures();
+  }, [])
 
   return (
     <div>
@@ -240,9 +251,11 @@ export default function Home() {
       <section className={styles.featured}>
         <h1 className={styles.title}>Featured Products</h1>
         <div className={styles.featuredGrid}>
-          <Product />
-          <Product />
-          <Product />
+          {
+            featured.map((item: any)=>{
+              return <Product key={item.id} item={item} />
+            })
+          }
         </div>
       </section>
     </div>

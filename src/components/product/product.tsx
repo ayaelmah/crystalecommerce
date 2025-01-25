@@ -3,20 +3,22 @@ import styles from "./product.module.css"
 import Image from 'next/image'
 import Link from 'next/link'
 
-const product = () => {
+const product = ({item}: {item: any}) => {
+
+
   return (
     <article className={styles.product}>
             <Image
             className={styles.mainImg}
-            src="/images/main/bg1.jpg"
+            src={item.imgUrl}
               height={2000}
               width={2000}
               alt="product"
             />
             <div className={styles.content}>
-              <h1 className={styles.name}>product</h1>
-              <h3 className={styles.price}>$50</h3>
-              <p className={styles.desc}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum labore voluptates inventore qui porro sit eaque quasi nemo consectetur ratione.</p>
+              <h1 className={styles.name}>{item.name}</h1>
+              <h3 className={styles.price}>${item.price}</h3>
+              <p className={styles.desc}>{item.desc}</p>
               <Image
               className={styles.bookmark}
               src={"/images/icons/bookmark.png"}
@@ -24,7 +26,7 @@ const product = () => {
                 height={50}
                 alt="bookmard"
               />
-              <Link href={"/"}>
+              <Link href={`/products/${item.id}`}>
               <button>Buy Now</button>
               </Link>
             </div>
