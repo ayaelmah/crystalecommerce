@@ -1,0 +1,81 @@
+.products {
+    margin: 3rem auto;
+}
+
+.title {
+    font-size: 3rem;
+    text-align: center;
+    color: var(--purple);
+}
+
+.productFlex {
+    display: flex;
+    margin: 3rem auto;
+    gap: 5rem;
+}
+
+.productsFilter {
+    background-color: var(--purple);
+    padding: 1rem 2.5rem 1.8rem 2.5rem;
+    color: white;
+}
+
+.productsFilter h2 {
+    font-size: 3.4rem;
+}
+
+.productsFilter select {
+    margin: 1.5rem auto;
+    width: 100%;
+    padding: 0.7rem 1rem;
+    font-size: 1.3rem;
+    font-weight: 800;
+    cursor: pointer;
+    background-color: white;
+    color: var(--purple);
+    border: 1px solid transparent;
+    outline: none;
+}
+
+.minmax div {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 30px;
+    justify-content: space-between;
+}
+
+.minmax input {
+    width: 50px;
+    outline: none;
+    border: none;
+}
+
+.productsFilter button {
+    width: 100%;
+    font-size: 1.3rem;
+    padding: 0.3rem;
+    color: var(--purple);
+    font-weight: 800;
+    background-color: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.productsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-between;
+    gap: 3rem;
+}
+
+.change {
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.change img {
+    cursor: pointer;
+}

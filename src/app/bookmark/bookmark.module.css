@@ -1,0 +1,33 @@
+.bookmark {
+    width: 90%;
+    margin: 3rem auto;
+    text-align: center;
+}
+
+.bookmark .title {
+    font-size: 3rem;
+    color: var(--blue);
+}
+
+.bookmarkGrid {
+    margin: 3rem auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+@media screen and (max-width: 1060px) {
+    .bookmarkGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .title {
+        font-size: 2.4rem;
+    }
+
+    .bookmarkGrid{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

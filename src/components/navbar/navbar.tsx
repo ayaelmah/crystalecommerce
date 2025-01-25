@@ -17,10 +17,10 @@ const navbar = () => {
         <h1 className={styles.logo}>Sahara Sparkle</h1>
         <ul className={styles.links}>
         <li>
-            <Link href={"/"}>Products</Link>
+            <Link href={"/products"}>Products</Link>
         </li>
         <li>
-            <Link href={"/"}>Bookmarks</Link>
+            <Link href={"/bookmark"}>Bookmarks</Link>
         </li>            
         <li>
             <Link href={"/contactus"}>Contact Us</Link>
