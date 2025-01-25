@@ -2,22 +2,27 @@
 
 import { prisma } from "@/db"
 
-const createCartServer = async() =>{
-    const cart = await prisma.cart.create({
+export const addCartItemServer = async(cartId: string, id: string, name: string, imgUrl: string, quantity: number, price: number) =>{
+    const cartItem = await prisma.cartItem.create({
         data:{
-            userId: "1"
-        }   
-    })
-
-    return cart;
-}
-
-const getCartServer = async() =>{
-    const cart = await prisma.cart.findFirst({
-        where:{
-            userId: "1"
+            productId: id,
+            cartId,
+            name: name,
+            quantity: quantity,
+            price: price,
+            imgUrl: imgUrl
         }
     });
 
-    return cart;
-};
+    return cartItem;
+}
+
+export const getCartItemsServer = async(cartId: string) =>{
+    const cartItems = await prisma.cartItem.findMany({
+        where:{
+            cartId
+        }
+    });
+
+    return cartItems;
+}

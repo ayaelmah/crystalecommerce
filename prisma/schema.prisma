@@ -58,6 +58,9 @@ model Cart {
 
 model CartItem {
   id        String    @id @default(cuid())
+  imgUrl    String
+  name      String
+  price     Int
   cart      Cart      @relation(fields: [cartId], references: [id], onDelete: Cascade)
   cartId    String
   product   Product   @relation(fields: [productId], references: [id], onDelete: Cascade)

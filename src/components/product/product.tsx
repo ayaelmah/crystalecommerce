@@ -8,6 +8,7 @@ const product = ({item}: {item: any}) => {
 
   return (
     <article className={styles.product}>
+      <Link href={`/products/${item.id}`}>
             <Image
             className={styles.mainImg}
             src={item.imgUrl}
@@ -15,6 +16,7 @@ const product = ({item}: {item: any}) => {
               width={2000}
               alt="product"
             />
+      </Link>
             <div className={styles.content}>
               <h1 className={styles.name}>{item.name}</h1>
               <h3 className={styles.price}>${item.price}</h3>
@@ -26,9 +28,7 @@ const product = ({item}: {item: any}) => {
                 height={50}
                 alt="bookmard"
               />
-              <Link href={`/products/${item.id}`}>
               <button>Buy Now</button>
-              </Link>
             </div>
           </article>
   )
