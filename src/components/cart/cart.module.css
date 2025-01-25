@@ -13,6 +13,7 @@
     transform: translateX(100%);
     opacity: 0;
     transition: 1s ease-out;
+    z-index: 5545445;
 }
 
 .cart.back {

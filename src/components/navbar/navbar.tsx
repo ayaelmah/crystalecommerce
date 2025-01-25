@@ -7,7 +7,7 @@ import Cart from '../cart/cart';
 
 const navbar = () => {
     const [openNav, setOpenNav] = useState(false);
-    const [openCart, setOpenCart] = useState(true);
+    const [openCart, setOpenCart] = useState(false);
 
 
   return (

@@ -1,8 +1,14 @@
+/********** main ********/
+
 .main {
     width: 100vw;
     height: 100vh;
     position: relative;
     background: linear-gradient(rgba(15, 15, 107, 0.189), rgba(115, 3, 115, 0.271));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .main img {
@@ -11,4 +17,443 @@
     object-fit: cover;
     position: absolute;
     z-index: -1;
+    opacity: 0;
+    transition: 0.5s ease-in-out;    
+}
+
+.main img.appear {
+    opacity: 1;
+}
+
+.main .content {
+    width: 80%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    margin: 0 auto;
+}
+
+.main .content h1 {
+    font-size: 3rem;
+    color: white;
+}
+
+.main .content button {
+    padding: 1rem 6rem;
+    font-size: 3rem;
+    font-weight: 800;
+    background-color: transparent;
+    background-color: #c222db;
+    color: white;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: .3s ease-out;
+}
+
+.main .content button:hover {
+    color: #c222db;
+    border: 1px solid #c222db;
+    background-color: transparent;
+}
+
+.main .change {
+    position: relative;
+    bottom: -25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 3rem;
+}
+
+.main .change div {
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: white;
+    float: bottom;
+}
+
+.main .change div:hover {
+    height: 35px;
+    width: 35px;
+}
+
+.main .change div:active, .main .change div.active {
+    height: 35px;
+    width: 35px;
+    background-color: rgb(220, 66, 228);
+}
+
+/********* brands *********/
+.brands {
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7rem;
+    animation: scroll 10s linear infinite;
+}
+
+@keyframes scroll {
+    0% {
+      transform: translateX(400px);
+    }
+    50% {
+      transform: translateX(-400px);
+    }
+    100% {
+        transform: translateX(400px);
+    }
+  }
+
+/*********** About Us *************/
+.aboutus {
+    width: 90%;
+    margin: 3rem auto;
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+    align-items: top;
+}
+
+.aboutus img {
+    height: 500px;
+    width: 50%;
+    object-fit: cover;
+    border-radius: 25px;
+    box-shadow: 0 0 2px 2px rgba(205, 5, 145, 0.378);
+}
+
+.aboutus .content {
+    width: 50%;
+}
+
+.aboutus .content h1 {
+    font-size: 4rem;
+    color: var(--purple);
+    margin-bottom: 30px;
+}
+
+.aboutus .content p {
+    font-size: 0.9rem;
+    color: purple;
+}
+
+/************* Reviews *************/
+.reviews {
+    width: 90%;
+    margin: 3rem auto;
+    text-align: center;
+    position: relative;
+    background-color: var(--blue);
+    padding: 2rem 0;
+}
+
+.reviews .title {
+    font-size: 3rem;
+    color: white;
+}
+
+.reviewsGrid {
+    position: relative;
+    width: 80%;
+    margin: 4rem auto;
+    background-color: white;
+    padding: 2rem 0;
+    border-radius: 15px;
+}
+
+.reviews .person {
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: 1s ease-in-out;
+    height: 0;
+}
+
+.reviews .person.appear {
+    opacity: 1;
+    height: fit-content;
+    transform: translateX(0);
+}
+
+.reviews .person h1 {
+    font-size: 2rem;
+    color: var(--blue);
+    margin-bottom: 3rem;
+}
+
+.reviews .person p {
+    max-width: 400px;
+    margin: 0 auto;
+    font-size: 0.8rem;
+    line-height: 25px;
+    color: var(--blue);
+}
+
+.reviews .person img {
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.reviews .change {
+    position: absolute;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 97%;
+    justify-content: space-between;
+}
+
+.reviews .change img{
+    cursor: pointer;
+}
+
+/********* Contact Us **********/
+.contactus {
+    width: 90%;
+    margin: 5rem auto;
+    text-align: center;
+}
+
+.contactus .title {
+    font-size: 3rem;
+    color: var(--purple);
+    margin-bottom: 3rem;
+}
+
+
+.contactus .content {
+    width: 100%;
+    margin: 0 auto;
+    background: url("/images/main/bg1.jpg");
+    padding: 4rem 1rem;
+    border-radius: 25px;
+    min-height: 200px;
+}
+
+.contactus .content h1 {
+    font-size: 4rem;
+    color: white;
+    margin-bottom: 3rem;
+}
+
+.contactus .content button {
+    font-size: 3rem;
+    color: white;
+    background-color: var(--blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 3rem;
+    gap: 3rem;
+    margin: 0 auto;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+
+/********* Featured ***********/
+.featured {
+    width: 90%;
+    margin: 3rem auto;
+    text-align: center;
+}
+
+.featured .title {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    color: var(--purple);
+}
+
+.featuredGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    gap: 2rem;
+    margin: 0 auto;
+    align-items: center;
+}
+
+/********** responsive **********/
+
+
+@media screen and (max-width: 900px){
+
+    /********* main ********/
+    .main .content {
+        width: 90%;
+    }
+
+    .main .content h1 {
+        font-size: 2.2rem;
+    }
+    
+    .main .content button {
+        padding: 1rem 4rem;
+        font-size: 2.2rem;
+    }
+
+    /******** aboutus *********/
+    .aboutus {
+        width: 90%;
+        margin: 3rem auto;
+        display: flex;
+        gap: 3rem;
+        justify-content: center;
+        align-items: top;
+    }
+    
+    .aboutus img {
+        height: 400px;
+        width: 40%;
+    }
+    
+    
+    .aboutus .content h1 {
+        font-size: 3rem;
+    }
+    
+    .aboutus .content p {
+        font-size: 0.75rem;
+    }
+
+    /******* Reviews *******/
+    .reviews .change img {
+        width: 45px;
+        height: 45px;
+    }
+       
+    .reviews .person p {
+        max-width: 350px;
+        font-size: 0.7rem;
+        padding: 0 1rem;
+    }
+
+    .reviews .person h1 {
+        font-size: 1.7rem;
+    }
+
+    /********* Contact Us **********/
+
+    .contactus .title {
+        font-size: 2.5rem;
+    }
+
+
+.contactus .content {
+    padding: 2.7rem 1rem;
+}
+
+.contactus .content h1 {
+    font-size: 3.2rem;
+}
+
+.contactus .content button {
+    font-size: 2.5rem;
+    color: white;
+    padding: 1rem 2.5rem;
+    gap: 2.5rem;
+}
+}
+
+
+@media screen and (max-width: 800px){
+
+    /********* brands ********/
+    .brands img {
+        height: 50px;
+        width: 50px;
+    }
+
+    /******** about us ******/
+    .aboutus {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .aboutus .content h1 {
+        font-size: 2.4rem;
+    }
+
+    .aboutus:nth-last-child(1) {
+        flex-direction: column-reverse;
+    }
+
+    .aboutus img {
+        width: 100%;
+    }
+    .aboutus .content {
+        width: 100%;
+    }
+
+    /********* Contact Us **********/
+
+    .contactus .title {
+        font-size: 2.2rem;
+    }
+    
+    
+    .contactus .content {
+        padding: 2.5rem 1rem;
+    }
+    
+    .contactus .content h1 {
+        font-size: 2rem;
+    }
+    
+    .contactus .content button {
+        font-size: 2.1rem;
+        color: white;
+        padding: 1rem 2.2rem;
+        gap: 1.5rem;
+    }
+
+    /*********** featured **********/
+    .featured .title {
+        font-size: 2.5rem;
+    }
+    
+    .featuredGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }   
+
+}
+
+@media screen and (max-width: 550px){
+    .featuredGrid {
+        grid-template-columns: repeat(1, 1fr);
+    }   
+
+    .featured .title {
+        font-size: 2.2rem;
+    }
+}
+
+
+@media screen and (max-width: 450px){
+    /******** main ********/
+
+    .main .content {
+        width: 95%;
+    }
+
+    .main .content h1 {
+        font-size: 1.8rem;
+    }
+    
+    .main .content button {
+        padding: 1rem 2rem;
+        font-size: 1.7rem;
+    }
+
+    /********* brands *********/
+       
 }
