@@ -1,14 +1,18 @@
 "use client"
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import styles from "./product.module.css"
 import Image from 'next/image'
 import { useParams } from 'next/navigation'
 import { getProductIdServer } from '@/server/product'
+import { UserContext } from '@/context/user'
+import { addBookMarkServer, removeBookMarkServer } from '@/server/user'
 
 const page = () => {
 
   const {id}: {id: string} = useParams();
   const [product, setProduct] = useState<any>();
+  const {bookMarks, getBookMarks, user}: any = useContext(UserContext);
+  const [inBookMarks, setInBookMarks] = useState(false);
 
   const getProduct = async() =>{
     if(id){
@@ -16,6 +20,26 @@ const page = () => {
       setProduct(res);
     }
   }
+
+  // Bookmark Functions
+  const addBookMark = async() =>{
+    const res = await addBookMarkServer(user.id, product.id);
+    await getBookMarks();
+  }
+
+  const removeBookMark = async() =>{
+    const res = await removeBookMarkServer(user.id, product.id);
+    await getBookMarks();
+  }
+  // UseEffects
+useEffect(()=>{
+    let doesItem = bookMarks?.find((bookmark: any) => product.id == bookmark.productId);
+    if(doesItem && doesItem?.id){
+      setInBookMarks(true);
+    } else {
+      setInBookMarks(false);
+    }
+  }, [bookMarks])
 
   useEffect(()=>{
     getProduct();
@@ -37,33 +61,31 @@ const page = () => {
                 <h3 className={styles.price}>${product.price}</h3>
                 <h3 className={styles.mes}>Height: {product.height}</h3>
                 <h3 className={styles.mes}>Width: {product.width}</h3>
-                <h1 className={styles.rating}>Rating: 0</h1>
                 <h3 className={styles.desc}>Description: </h3>
                 <p>{product.description}</p>
+                {
+                !inBookMarks ? <Image
+                onClick={()=> addBookMark()}
+              className={styles.bookmark}
+              src={"/images/icons/bookmark.png"}
+                width={50}
+                height={50}
+                alt="bookmark" /> : <Image
+                onClick={()=> removeBookMark()}
+              className={styles.bookmark}
+              src={"/images/icons/redbookmark.png"}
+                width={50}
+                height={50}
+                alt="red bookmard"
+              />
+              
+              }
                 <button>Buy Now</button>
             </div>
         </article>
       }
         
-        <article className={styles.reviews}>
-          <div className={styles.submitReview}>
-            <h1>Give your review !</h1>
-            <select name="" id="">
-              <option value="">1</option>
-            </select>
-            <textarea name="" id=""></textarea>
-            <button>Add Review</button>
-          </div>
 
-          <section className={styles.comments}>
-            <div className={styles.review}>
-              <h1>Review : 5</h1>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam suscipit harum minus sunt! Alias fugit velit minima iure ex saepe.
-              </p>
-            </div>
-          </section>
-        </article>
     </div>
   )
 }
