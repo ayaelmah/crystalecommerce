@@ -53,6 +53,15 @@ export const createUserServer = async(name: string, email: string, clerkId: stri
     return {cart: cart, user: user};
 }
 
+export const deleteUserServer = async(id: string) =>{
+    const item = await prisma.user.delete({
+        where:{
+            id
+        }
+    })
+}
+
+// bookMark
 export const getBookMarksServer = async(userId: string) =>{
     const items = await prisma.bookMark.findMany({
         where:{

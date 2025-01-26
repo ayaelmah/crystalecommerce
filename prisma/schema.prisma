@@ -30,7 +30,7 @@ model Product {
   stock     Int
   height    Float
   width     Float
-  category  Category? @relation(fields: [categoryId], references: [id])
+  category  Category? @relation(fields: [categoryId], references: [id], onDelete: Cascade)
   categoryId String?
   createdAt DateTime  @default(now())
   updatedAt DateTime  @updatedAt

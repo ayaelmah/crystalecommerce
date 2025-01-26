@@ -13,7 +13,7 @@ const product = ({product}: {product: any}) => {
 
     const changeStock = async() =>{
         if(stock) {
-            await changeProductStockServer(product.id, stock);
+            await changeProductStockServer(product.id, Number(stock));
             await getProducts();
         }
     }

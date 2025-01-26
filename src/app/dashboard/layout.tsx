@@ -37,7 +37,7 @@ export default function DashboardLayout({
                         </Link>
                     </li>
                     <li>
-                        <Link href="/dashboard/counpons">
+                        <Link href="/dashboard/coupons">
                             Coupons
                         </Link>
                     </li>

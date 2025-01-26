@@ -1,7 +1,7 @@
 "use client"
 import React, { useEffect, useState } from 'react'
 import styles from "./users.module.css"
-import { getAllUsersServer } from '@/server/user';
+import { deleteUserServer, getAllUsersServer } from '@/server/user';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -11,6 +11,11 @@ const page = () => {
   const getUsers = async () =>{
     const res: any = await getAllUsersServer();
     setUsers(res);
+  }
+
+  const deleteUser = async(id: string) =>{
+    await deleteUserServer(id);
+    await getUsers();
   }
 
   useEffect(()=>{
@@ -36,6 +41,7 @@ const page = () => {
               </h3>
               <h3>
                 <Image
+                onClick={()=> deleteUser(user.id)}
                 src={"/images/icons/delete.png"}
                 width={30}
                 height={30}

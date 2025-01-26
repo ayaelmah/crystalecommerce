@@ -5,8 +5,8 @@ import { prisma } from "@/db"
 // Products
 
 export const createProductServer = async(name: string, description: string, imgUrl: string,
-    price: number, stock: number, height: number, width: number) =>{
-    const product = await prisma.product.create({
+    price: number, stock: number, height: number, width: number, category: string) =>{
+    const item = await prisma.product.create({
         data:{
             name,
             description,
@@ -14,7 +14,8 @@ export const createProductServer = async(name: string, description: string, imgU
             height,
             width,
             imgUrl,
-            price
+            price,
+            categoryId: category
         }
     });
 }
