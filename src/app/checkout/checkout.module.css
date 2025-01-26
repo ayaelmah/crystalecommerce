@@ -92,6 +92,12 @@
     margin: 0 auto;
 }
 
+.checkout .applyBtn {
+    padding: 0.2rem 0.5rem;
+    margin-top: 0.5rem;
+    display: block;
+}
+
 
 @media screen and (max-width: 950px){
  .checkoutGrid {

@@ -51,6 +51,10 @@
     margin-right: -30px;
 }
 
+.product button.disabled {
+    background-color: gray;
+}
+
 
 @media screen and (max-width: 1050px){
     .product {

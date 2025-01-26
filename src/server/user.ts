@@ -2,9 +2,6 @@
 
 import { prisma } from "@/db";
 
-
-
-
 export const createUserServer = async(name: string, email: string, clerkId: string) =>{
     let user = await prisma.user.findFirst({
         where:{
@@ -48,4 +45,32 @@ export const createUserServer = async(name: string, email: string, clerkId: stri
     }
 
     return {cart: cart, user: user};
+}
+
+export const getBookMarksServer = async(userId: string) =>{
+    const items = await prisma.bookMark.findMany({
+        where:{
+            userId: userId
+        }
+    });
+    return items;
+}
+
+export const addBookMarkServer = async(userId: string, productId: string) =>{
+    const item = await prisma.bookMark.create({
+        data:{
+            userId,
+            productId
+        }
+    })
+}
+
+export const removeBookMarkServer = async(userId: string, productId: string) =>{
+    const item = await prisma.bookMark.delete({
+        where:{
+            userId,
+            productId
+        }
+    });
+    return item;
 }

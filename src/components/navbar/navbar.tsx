@@ -12,9 +12,10 @@ import {  createUserServer } from '@/server/user';
 import { CartContext, CartProvider } from '@/context/cart';
 import { UserContext } from '@/context/user';
 
+
 const navbar = () => {
     const [openNav, setOpenNav] = useState(false);
-    const [openCart, setOpenCart] = useState(false);
+    const {openCart, setOpenCart} : any = useContext(CartContext);
     const {cart, setCart}: any = useContext(CartContext);
     const {user, setUser}: any = useContext(UserContext);
     const userCl = useUser().user;
@@ -35,7 +36,7 @@ const navbar = () => {
 
   return (
     <>
-    <Cart openCart={openCart} setOpenCart={setOpenCart} />
+    <Cart />
     <nav className={styles.nav}>
         <Link href="/">
         <h1 className={styles.logo}>Sahara Sparkle</h1>
