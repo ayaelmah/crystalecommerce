@@ -81,7 +81,7 @@ const page = () => {
           <h1 className={styles.pricingTitle}>Price: </h1>
           <h3>Products total: ${cartTotal}</h3>
           <h3>Shipping: $4</h3>
-          <h3>Total: ${newTotal}</h3>
+          <h3>Total: ${newTotal.toFixed(2)}</h3>
           <div className={styles.coupons}>
             <h3>Coupons: </h3>
             {coupon.percentage != 1 ? <p style={{ color: "white" }}>%{coupon.percentage * 100}</p> : ""}
