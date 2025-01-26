@@ -37,7 +37,6 @@ const page = () => {
                 <h3 className={styles.price}>${product.price}</h3>
                 <h3 className={styles.mes}>Height: {product.height}</h3>
                 <h3 className={styles.mes}>Width: {product.width}</h3>
-                <h3 className={styles.mes}>Color: {product.color}</h3>
                 <h1 className={styles.rating}>Rating: 0</h1>
                 <h3 className={styles.desc}>Description: </h3>
                 <p>{product.description}</p>

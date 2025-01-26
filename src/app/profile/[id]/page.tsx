@@ -1,16 +1,18 @@
 "use client"
-import React, { useContext, useEffect, useState } from 'react'
-import styles from "./profile.module.css"
+import React, {useState, useEffect, useContext} from 'react'
+import styles from "../profile.module.css";
+import Link from 'next/link';
 import { UserContext } from '@/context/user';
 import { getUserOrdersServer } from '@/server/order';
-import Link from 'next/link';
+import { useParams } from 'next/navigation';
 
 const page = () => {
     const [orders, setOrders] = useState<any>([]);
     const {user}: any = useContext(UserContext);
+    const {id} : {id: string} = useParams();
 
     const getOrders = async() =>{
-        const res: any = await getUserOrdersServer(user.id);
+        const res: any = await getUserOrdersServer(id);
         setOrders(res);
     }
 

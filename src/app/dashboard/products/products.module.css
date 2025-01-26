@@ -1,0 +1,78 @@
+.products {
+    width: 90%;
+    margin: 3rem auto;
+}
+
+.title {
+    font-size: 3rem;
+    text-align: center;
+    color: var(--purple);
+    margin-bottom: 3rem;
+}
+
+.products form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--purple);
+    box-shadow: 0 0 2px 2px rgba(128, 0, 128, 0.408);
+}
+.products .twoFlex {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+}
+
+.products .threeFlex {
+    display: grid;
+    grid-template-columns: repeat(3, calc(100%/3));
+}
+
+.products form input {
+    outline: none;
+    border: none;
+    border-bottom: 1px solid var(--purple);
+    border-right: 1px solid var(--purple);
+    height: 45px;
+    padding: 7px;
+    font-size: 1.1rem;
+}
+
+.products form button {
+    padding: 1rem 0;
+    font-size: 1.3rem;
+    font-weight: 800;
+    background-color: var(--purple);
+    border: none;
+    outline: none;
+    color: white;
+}
+
+.table {
+    display: flex;
+    flex-direction: column;
+    margin: 4rem auto;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 0 2px 2px rgba(128, 0, 128, 0.425);
+}
+
+.table article {
+    display: grid;
+    grid-template-columns: repeat(6, calc(100%/6));
+    width: 100%;
+}
+
+.table h3 {
+    padding: 20px;
+}
+
+.table button {
+    height: 100%;
+    width: 100%;
+    font-size: 1.1rem;
+    color: var(--purple);
+    font-weight: 800;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+}

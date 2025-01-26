@@ -56,7 +56,11 @@ const navbar = () => {
             <Link href={"/profile"}>
                 <Image height={35} width={35} src={"/images/icons/user.png"} alt="user"></Image>
             </Link>
+            <Link
+            href={"/dashboard/statistics"}
+            >
             <Image height={35} width={35} src={"/images/icons/dashboard.png"} alt="dashboard"></Image>
+            </Link>
             <Image onClick={()=> setOpenCart(true)} height={35} width={35} src={"/images/icons/cart.png"} alt="user"></Image>
             <Image onClick={()=> setOpenNav(true)} className={styles.menu} height={35} width={35} src={"/images/icons/menu.png"} alt="menu"></Image>
         <UserButton />

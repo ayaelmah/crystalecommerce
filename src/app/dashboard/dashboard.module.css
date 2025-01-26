@@ -1,0 +1,16 @@
+.navbar {
+    background-color: var(--purple);
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 1.5rem 0;
+}
+
+.navbar ul a {
+    color: white;
+    font-weight: 800;
+}

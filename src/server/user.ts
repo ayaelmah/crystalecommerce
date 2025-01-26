@@ -2,6 +2,12 @@
 
 import { prisma } from "@/db";
 
+export const getAllUsersServer = async() =>{
+    const res = await prisma.user.findMany({});
+
+    return res;
+}
+
 export const createUserServer = async(name: string, email: string, clerkId: string) =>{
     let user = await prisma.user.findFirst({
         where:{

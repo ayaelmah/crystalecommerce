@@ -1,0 +1,82 @@
+.categories {
+    width: 90%;
+    margin: 3rem auto;
+}
+
+.title {
+    font-size: 3rem;
+    text-align: center;
+    color: var(--purple);
+    margin-bottom: 3rem;
+}
+
+.categories form {
+    width: 80%;
+    margin: 3rem auto;
+    height: 55px;
+    box-shadow: 0px 1px 2px 2px rgba(128, 0, 128, 0.386);
+}
+
+.categories form input {
+    width: 80%;
+    height: 100%;
+    border: none;
+    outline: none;
+    padding: 7px;
+}
+
+.categories form button {
+    width: 20%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background-color: var(--purple);
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.categories .table {
+    display: flex;
+    flex-direction: column;
+    margin: 4rem auto;
+    width: 100%;
+    box-shadow: 0 0 2px 2px rgba(128, 0, 128, 0.374);
+}
+
+.categories .table article {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    gap: 2rem;
+}
+
+.categories .table article h3 {
+    padding: 20px;
+    text-align: center;
+}
+
+@media screen and (max-width: 650px){
+    .title {
+        font-size: 2.4rem;
+    }
+    
+    .categories form {
+        width: 100%;
+        height: 45px;
+    }
+    
+    
+    .categories form button {
+        font-size: 1rem;
+    }
+    
+    .categories .table article {
+        gap: 1rem;
+    }
+    
+    .categories .table article h3 {
+        padding: 10px;
+        font-size: 0.85rem;
+    }   
+}

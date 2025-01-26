@@ -1,0 +1,81 @@
+.coupons {
+    margin: 3rem auto;
+    text-align: center;
+    width: 90%;
+}
+
+.title {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    color: var(--purple);
+}
+
+.coupons form {
+    display: flex;
+    width: 100%;
+    margin: 4rem auto;
+    height: 50px;
+    box-shadow: 0 0 2px 2px rgba(128, 0, 128, 0.277);
+}
+
+.coupons form input, .coupons form button {
+    height: 100%;
+}
+
+.coupons form input {
+    width: 40%;
+    padding: 7px;
+    border: none;
+    outline: none;
+    border-left: 1px solid var(--purple);
+    font-size: 1.1rem;
+}
+
+.coupons form button {
+    width: 20%;
+    background-color: var(--purple);
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 800;
+    border: none;
+    outline: none;
+}
+
+.table {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    box-shadow: 0 0 2px 2px rgba(128, 0, 128, 0.245);
+}
+
+.table div {
+    display: grid;
+    grid-template-columns: repeat(4, calc(100%/4));
+}
+
+.table div h3 {
+    padding: 20px;
+}
+
+@media screen and (max-width: 600px) {
+    .title {
+        font-size: 2.4rem;
+    }
+
+    .table {
+        gap: 1rem;
+    }
+
+    .table div h3 {
+        padding: 10px;
+        font-size: 0.85rem;
+    }
+
+    .coupons form {
+        height: 35px;
+    }
+
+    .coupons button {
+        font-size: 1rem;
+    }
+}

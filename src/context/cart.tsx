@@ -19,7 +19,6 @@ export const CartProvider = ({ children }: CartProviderProps) => {
   const [cartItems, setCartItems] = useState<CartItem[] | null>(null);
   const [openCart, setOpenCart] = useState(false);
   const [cartTotal, setCartTotal] = useState(0);
-  const [cartCoupon, setCartCoupon] = useState(1);
 
   const getCartItems = async() =>{
     if(cart){
@@ -33,20 +32,19 @@ export const CartProvider = ({ children }: CartProviderProps) => {
     cartItems?.forEach((item: any)=>{
       total += item.quantity * item.price;
     })
-    total *= cartCoupon;
     setCartTotal(total);
   }
 
   useEffect(()=>{
     getCartTotal();
-  }, [cartItems, cartCoupon])
+  }, [cartItems])
 
   useEffect(()=>{
     getCartItems();
   },[cart])
 
   return (
-    <CartContext.Provider value={{ cart, setCart, cartItems, setCartItems, getCartItems, openCart, setOpenCart, cartTotal, getCartTotal, setCartCoupon }}>
+    <CartContext.Provider value={{ cart, setCart, cartItems, setCartItems, getCartItems, openCart, setOpenCart, cartTotal, getCartTotal }}>
       {children}
     </CartContext.Provider>
   );

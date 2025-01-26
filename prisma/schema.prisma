@@ -30,7 +30,6 @@ model Product {
   stock     Int
   height    Float
   width     Float
-  color     String
   category  Category? @relation(fields: [categoryId], references: [id])
   categoryId String?
   createdAt DateTime  @default(now())

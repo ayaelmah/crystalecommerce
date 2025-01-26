@@ -4,10 +4,12 @@ import styles from "./cart.module.css";
 import Image from 'next/image';
 import { addCartItemServer, changeItemQuantityServer, deleteCartItemServer } from '@/server/cart';
 import { CartContext } from '@/context/cart';
+import { useRouter } from "next/router";
+
 
 const cartItem = ({item}: {item: any}) => {
   const {getCartItems, setCartItems, cartItems} = useContext(CartContext);
-  const [itemQuantity, setItemQuantity] = useState(item.quantity | 1);
+  const [itemQuantity, setItemQuantity] = useState(item.quantity );
 
   const addItem = async() =>{
     const res = await changeItemQuantityServer(item.id, itemQuantity + 1);

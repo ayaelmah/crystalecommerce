@@ -1,0 +1,61 @@
+.orders {
+    margin: 3rem auto;
+    width: 90%;
+}
+
+.title {
+    font-size: 3rem;
+    text-align: center;
+    color: var(--purple);
+    margin-bottom: 3rem;
+}
+
+.table {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+    box-shadow: 0 0 2px 2px rgba(128, 0, 128, 0.363);
+    gap: 2rem;
+}
+
+.table article {
+    display: grid;
+    grid-template-columns: repeat(4, calc(100%/4));
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.table article h3 {
+    width: 100%;
+    padding: 20px;
+}
+
+.table button {
+    padding: 1rem 0.5rem;
+    background-color: white;
+    border: none;
+    color: var(--purple);
+    font-size: 1rem;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.table input {
+    padding: 7px;
+    border: none;
+    font-size: 1.1rem;
+    outline: none;
+}
+
+.table select {
+    padding: 10px;
+    height: 100%;
+    border: none;
+    font-size: 1.1rem;
+    outline: none;
+    cursor: pointer;
+}
